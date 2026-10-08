@@ -34,7 +34,6 @@ const inventory = [
 ];
 let selectedIndex = 0;
 
-const world = [];
 const player = {
   x: 6 * TILE,
   y: 7 * TILE,
@@ -85,6 +84,8 @@ function generateWorld() {
     world.push(row);
   }
 }
+
+const world = [];
 
 function getTile(x, y) {
   const tileX = Math.floor(x / TILE);
@@ -263,6 +264,7 @@ function drawWorld() {
       ctx.fillRect(drawX, drawY, TILE, TILE);
 
       ctx.strokeStyle = 'rgba(0,0,0,0.12)';
+      ctx.lineWidth = 1;
       ctx.strokeRect(drawX, drawY, TILE, TILE);
     }
   }
